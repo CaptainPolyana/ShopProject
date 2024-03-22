@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_grid_view/basket.dart';
 import 'package:flutter_grid_view/cars_list.dart';
+import 'package:flutter_grid_view/favorite_cars.dart';
 import 'package:flutter_grid_view/models/cars.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,6 +19,14 @@ class HomePage extends StatelessWidget {
 
         ),
         centerTitle: true,
+        actions: <Widget>[
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => FavoriteItem()));
+          }, icon: Icon(Icons.favorite)),
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Basket()));
+          }, icon: Icon(Icons.shopping_basket))
+        ],
       ),
       body: GridView.builder(
           itemCount: carsList.length,

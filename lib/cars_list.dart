@@ -1,5 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_grid_view/button_to_car.dart';
+import 'package:flutter_grid_view/icon_button_favorite.dart';
 import 'package:flutter_grid_view/models/cars.dart';
 class CarsList extends StatelessWidget {
   const CarsList({Key? key, required this.index_car}) : super(key: key);
@@ -7,6 +10,7 @@ class CarsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -39,6 +43,32 @@ class CarsList extends StatelessWidget {
               child: Expanded( child: ToCar(index_car: index_car))
 
 
+          ),
+          Container(
+            child: Expanded(
+              flex: 1,
+              child:  Row(
+                children: <Widget>[
+                 IconButtonFavorite(index_car: index_car),
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
+                      color: Colors.white,
+                      onPressed: ()
+                      {
+
+                        BasketCars.add(carsList[index_car]);
+                      },
+                      icon: Icon(Icons.shopping_basket),
+                      tooltip: 'Добавить в корзину',
+
+
+                    ),
+                  )
+
+                ],
+              ),
+            ) ,
           )
 
         ],
