@@ -43,7 +43,7 @@ class _IconButtonFavoriteState extends State<IconButtonFavorite> {
               else
                 {
 
-                  FavoriteItemCar.removeAt(index_car);
+                  FavoriteItemCar.removeWhere((item) => item.id == carsList[index_car].id);
                   count = 0;
                   _MyColor = Colors.white;
                 }
