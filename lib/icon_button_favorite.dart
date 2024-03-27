@@ -30,24 +30,23 @@ class _IconButtonFavoriteState extends State<IconButtonFavorite> {
         color: _MyColor,
         tooltip: 'Добавить в избранное',
           onPressed: (){
-            setState(() {
-              count++;
-              _isFavorite = !_isFavorite;
-
-              if (count == 1){
+            if(_isFavorite == false)
+              {
                 FavoriteItemCar.add(carsList[index_car]);
                 _MyColor = Colors.red;
-
-
+                  setState(() {
+                    _isFavorite = !_isFavorite;
+                  });
               }
-              else
-                {
+            else if(_isFavorite == true)
+            {
+              FavoriteItemCar.removeWhere((item) => item.id == carsList[index_car].id);
+              _MyColor = Colors.white;
+              setState(() {
+                _isFavorite = !_isFavorite;
+              });
+            }
 
-                  FavoriteItemCar.removeWhere((item) => item.id == carsList[index_car].id);
-                  count = 0;
-                  _MyColor = Colors.white;
-                }
-            });
           },
 
       ),

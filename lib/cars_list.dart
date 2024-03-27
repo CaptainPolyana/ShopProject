@@ -26,15 +26,15 @@ class CarsList extends StatelessWidget {
           ),
           Center(
 
-            child: Expanded(child: Text('Название автомобиля: ${carsList[index_car].name}'
-            ),
-            )
+              child: Expanded(child: Text('Название автомобиля: ${carsList[index_car].name}'
+              ),
+              )
 
           ),
           Center(
-            child: Expanded(child: Text('Комплектация: ${carsList[index_car].complex}'
-            ),
-            )
+              child: Expanded(child: Text('Комплектация: ${carsList[index_car].complex}'
+              ),
+              )
           ),
           Center(
             child: Expanded(child: Text('Цена: ${carsList[index_car].cost} ₽')),
@@ -49,7 +49,7 @@ class CarsList extends StatelessWidget {
               flex: 1,
               child:  Row(
                 children: <Widget>[
-                 IconButtonFavorite(index_car: index_car),
+                  IconButtonFavorite(index_car: index_car),
                   Container(
                     alignment: Alignment.centerRight,
                     child: IconButton(

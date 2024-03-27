@@ -11,7 +11,7 @@ class ToCar extends StatelessWidget {
         onPressed: (){
 
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CarCart(index_car: index_car))
+              MaterialPageRoute(builder: (context) => CarCard(index_car: index_car))
           );
         }
 

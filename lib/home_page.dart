@@ -3,10 +3,16 @@ import 'package:flutter_grid_view/basket.dart';
 import 'package:flutter_grid_view/cars_list.dart';
 import 'package:flutter_grid_view/favorite_cars.dart';
 import 'package:flutter_grid_view/models/cars.dart';
+import 'package:flutter_grid_view/shop_list.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,6 +26,12 @@ class HomePage extends StatelessWidget {
         ),
         centerTitle: true,
         actions: <Widget>[
+          IconButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ShopList()));
+              },
+              icon: Icon(Icons.shopping_cart_checkout_outlined)
+          ),
           IconButton(onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => FavoriteItem()));
           }, icon: Icon(Icons.favorite)),
@@ -37,10 +49,12 @@ class HomePage extends StatelessWidget {
               childAspectRatio: 0.610
           ),
           itemBuilder: (BuildContext context, int index){
+
             return CarsList(index_car: index);
+
           }
       ),
 
-    );
+    );;
   }
 }
