@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_grid_view/models/cars.dart';
 class BasketList extends StatefulWidget {
   int index_basket;
-  BasketList({Key? key, required this.index_basket}) : super(key: key);
+  final VoidCallback updateSum;
+  BasketList({Key? key, required this.index_basket, required this.updateSum}) : super(key: key);
 
   @override
-  State<BasketList> createState() => _BasketListState(index_basket);
+  State<BasketList> createState() => _BasketListState(index_basket, updateSum);
 }
 
 class _BasketListState extends State<BasketList> {
   final int index_basket;
-  _BasketListState(this.index_basket);
+  _BasketListState(this.index_basket,this.updateSum);
+  final VoidCallback updateSum;
   @override
   Widget build(BuildContext context) {
     bool _isButtonDisabled = false;
@@ -73,11 +75,13 @@ class _BasketListState extends State<BasketList> {
                                   _isButtonDisabled = true;
                                   setState(() {
                                     BasketCars[index_basket].quantity--;
+                                    widget.updateSum();
                                   });
                                 }
                                 else{
                                   setState(() {
                                     BasketCars[index_basket].quantity--;
+                                    widget.updateSum();
                                   });
                                 }
                               },
@@ -93,6 +97,7 @@ class _BasketListState extends State<BasketList> {
                                 onPressed: (){
                                   setState(() {
                                     BasketCars[index_basket].quantity++;
+                                    widget.updateSum();
                                     _isButtonDisabled = false;
                                   });
                                 },
