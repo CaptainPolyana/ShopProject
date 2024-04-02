@@ -55,4 +55,6 @@
 
 ![image](https://github.com/CaptainPolyana/ShopProject/assets/145181221/5a3bb916-b431-4305-a697-d787c85cec80)
 
+## Личный кабинет
 
+<img width="2560" alt="image" src="https://github.com/CaptainPolyana/ShopProject/assets/145181221/eb1021e3-f071-47fa-a595-3cb00d1c5c4c">
