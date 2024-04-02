@@ -4,6 +4,7 @@ import 'package:flutter_grid_view/cars_list.dart';
 import 'package:flutter_grid_view/favorite_cars.dart';
 import 'package:flutter_grid_view/models/cars.dart';
 import 'package:flutter_grid_view/shop_list.dart';
+import 'package:flutter_grid_view/user_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,9 +29,9 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           IconButton(
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ShopList()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => UserPage()));
               },
-              icon: Icon(Icons.shopping_cart_checkout_outlined)
+              icon: Icon(Icons.person)
           ),
           IconButton(onPressed: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => FavoriteItem()));
