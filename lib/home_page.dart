@@ -3,7 +3,6 @@ import 'package:flutter_grid_view/basket.dart';
 import 'package:flutter_grid_view/cars_list.dart';
 import 'package:flutter_grid_view/favorite_cars.dart';
 import 'package:flutter_grid_view/models/cars.dart';
-import 'package:flutter_grid_view/shop_list.dart';
 import 'package:flutter_grid_view/user_page.dart';
 
 class HomePage extends StatefulWidget {

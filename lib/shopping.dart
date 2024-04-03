@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grid_view/models/cars.dart';
+import 'package:intl/intl.dart';
 class Shop extends StatefulWidget {
   int shop_index;
   Shop({Key? key, required this.shop_index}) : super(key: key);
@@ -12,6 +13,9 @@ class _ShopState extends State<Shop> {
   final int shop_index;
   _ShopState(this.shop_index);
   @override
+
+  DateTime now = new DateTime.now();
+ 
   Widget build(BuildContext context) {
     return Container(
       width: 300,
@@ -29,7 +33,9 @@ class _ShopState extends State<Shop> {
                   ),
                   Center(child: Text('Количество'),
                   ),
-                  Center(child: Text('Стоимость'),)
+                  Center(child: Text('Стоимость'),),
+                  Center(child: Text('Дата и время покупки'),),
+
                 ]
             ),
             TableRow(
@@ -47,7 +53,8 @@ class _ShopState extends State<Shop> {
                   ),
                   Center(
                     child: Text((ShopHistory[shop_index].cost*ShopHistory[shop_index].quantity).toString()),
-                  )
+                  ),
+                  Center(child: Text(now.toString()),)
 
 
                 ]

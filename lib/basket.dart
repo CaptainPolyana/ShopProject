@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_grid_view/basket_list.dart';
+import 'package:flutter_grid_view/home_page.dart';
 import 'package:flutter_grid_view/models/cars.dart';
 import 'package:flutter_grid_view/models/final_cost.dart';
 
@@ -23,10 +24,18 @@ class _BasketState extends State<Basket> {
     return Scaffold(
       appBar: AppBar(title: Text('Корзина'),
         centerTitle: true,
+        automaticallyImplyLeading: false,
         actions: [
           Text('Сумма товаров: '
           ),
-          Text(FinalCost().toString())
+          Text(FinalCost().toString()),
+          IconButton(
+              onPressed: (){
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              icon: Icon(Icons.home)
+          ),
         ],
       ),
       body: Column(
@@ -50,6 +59,7 @@ class _BasketState extends State<Basket> {
               count++;
             }
             BasketCars.clear();
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Basket()));
 
           }, child: Text('Купить все'))
         ],

@@ -1,10 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_grid_view/basket.dart';
 import 'package:flutter_grid_view/example_table.dart';
+import 'package:flutter_grid_view/favorite_cars.dart';
+import 'package:flutter_grid_view/home_page.dart';
 import 'package:flutter_grid_view/models/cars.dart';
 import 'package:flutter_grid_view/shop_list.dart';
 import 'package:flutter_grid_view/shopping.dart';
 import 'package:flutter_grid_view/swiper_image.dart';
+import 'package:flutter_grid_view/user_page.dart';
 import 'package:flutter_grid_view/video_player.dart';
 class CarCard extends StatefulWidget {
   int index_car;
@@ -61,8 +65,22 @@ class _CarCartState extends State<CarCard> {
       );
     }
     return Scaffold(
-      appBar: AppBar(title: Text(''
-      ),
+      appBar: AppBar(
+        actions: <Widget>[
+          IconButton(
+              onPressed: (){
+
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+              },
+              icon: Icon(Icons.home)
+          ),
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => FavoriteItem()));
+          }, icon: Icon(Icons.favorite)),
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Basket()));
+          }, icon: Icon(Icons.shopping_basket))
+        ],
       ),
       body: ListView(
         padding: const EdgeInsets.all(8),
@@ -109,6 +127,15 @@ class _CarCartState extends State<CarCard> {
           Container(
               margin: EdgeInsets.all(8),
               child: CupertinoButton(child: Text('Купить сейчас', style: TextStyle(fontSize: 30, color: Colors.blue),), onPressed: _isShown == true ? () => _delete(context): null)
+          ),
+          Container(
+            margin: EdgeInsets.all(8),
+            child: ElevatedButton(
+                onPressed: (){
+                  BasketCars.add(carsList[index_car]);
+                },
+
+                child: Text('Добавить в корзину')),
           )
         ],
       ),

@@ -10,7 +10,7 @@ class CarsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+int count = 0;
     return Container(
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
@@ -56,8 +56,8 @@ class CarsList extends StatelessWidget {
                       color: Colors.white,
                       onPressed: ()
                       {
-
                         BasketCars.add(carsList[index_car]);
+
                       },
                       icon: Icon(Icons.shopping_basket),
                       tooltip: 'Добавить в корзину',
