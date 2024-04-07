@@ -58,3 +58,11 @@
 ## Личный кабинет
 
 <img width="2560" alt="image" src="https://github.com/CaptainPolyana/ShopProject/assets/145181221/eb1021e3-f071-47fa-a595-3cb00d1c5c4c">
+
+## Поле для поиска
+![image](https://github.com/CaptainPolyana/ShopProject/assets/145181221/4e3a1b6f-b623-4234-b4b8-56e269faf028)
+![image](https://github.com/CaptainPolyana/ShopProject/assets/145181221/f5aa844a-9140-41f2-906b-39e662390169)
+![image](https://github.com/CaptainPolyana/ShopProject/assets/145181221/c52c344a-e82c-4496-8896-8b7180068369)
+![image](https://github.com/CaptainPolyana/ShopProject/assets/145181221/8e1bde58-f187-438c-bca1-141fba47cd38)
+
+
