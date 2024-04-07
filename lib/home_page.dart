@@ -13,19 +13,55 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  Icon customIcon = const Icon(Icons.search, color: Colors.black,);
+  Widget customSearchBar = const Text('Российские авто', style: TextStyle
+    (fontSize: 15, color: Colors.black, fontWeight: FontWeight.bold
+  ),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:
-        Text('Российские автомобили',
-          style: TextStyle
-            (fontSize: 15, color: Colors.black, fontWeight: FontWeight.bold
-          ),
-
-        ),
+        title: customSearchBar,
         centerTitle: true,
         actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              setState(() {
+                if (customIcon.icon == Icons.search) {
+                  customIcon = const Icon(Icons.cancel, color: Colors.black,);
+                  customSearchBar = const ListTile(
+                    leading: Icon(
+                      Icons.search,
+                      color: Colors.black,
+                      size: 28,
+                    ),
+                    title: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'введите название автомобиля...',
+                        hintStyle: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontStyle: FontStyle.italic,
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  );
+                } else {
+                  customIcon = const Icon(Icons.search, color: Colors.black,);
+                  customSearchBar = const Text('Российские автомобили', style: TextStyle
+                  (fontSize: 15, color: Colors.black, fontWeight: FontWeight.bold
+                  ),
+                  );
+                }
+              });
+            },
+            icon: customIcon,
+          ),
           IconButton(
               onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => UserPage()));
